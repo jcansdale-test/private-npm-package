@@ -7,4 +7,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: npm publish --registry https://token:${{ secrets.GITHUB_TOKEN }}@npm.pkg.github.com
+    - run: npm publish --registry https://${{ secrets.GITHUB_TOKEN }}@npm.pkg.github.com
