@@ -4,7 +4,11 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - run: npm publish --registry https://${{ secrets.GITHUB_TOKEN }}@npm.pkg.github.com
+    - run: npm publish --registry https://token:${{ secrets.GITHUB_TOKEN }}@npm.pkg.github.com
+
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - run: npm install @jcansdale-test/private-npm-package --registry https://token:${{ secrets.GITHUB_TOKEN }}@npm.pkg.github.com
